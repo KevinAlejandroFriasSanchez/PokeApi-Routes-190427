@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import Matricula from "./components/matricula";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Matricu from './components/matricu';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path= "/" element= {<App />}>
+          <Route path= "/matricula" element={<Matricula />} >
+            <Route path= ":matricuId" element= {<Matricu/>}/>
+            </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
