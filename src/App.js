@@ -83,6 +83,11 @@ function App() {
 
   return (
     <FavoriteProvider value={{favoritePokemons: favorites, updateFavoritePokemon: updateFavoritePokemon}}>
+      <h2 className="pokemon-card">
+      <Link to= "/matricula"> Matricula</Link>
+      
+      </h2>
+      <Outlet/>
     <div>
       <Navbar />
       <div className="App">
@@ -90,11 +95,15 @@ function App() {
         {notFound ? (<div className="no-found">No se encontró el <b>Pokémon</b> que buscabas <br/> <img src="/empty.png" alt="empty" /></div>) 
         : (<Pokedex loading={loading} pokemons={pokemons} page={page} setPage={setPage} total={total} />) }
       </div>
+      
       <br />
+      
     </div>
     <Footer />
     </FavoriteProvider>
+    
   );
+  
 }
 
 export default App;
