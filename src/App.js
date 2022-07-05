@@ -6,6 +6,7 @@ import Pokedex from './components/Pokedex';
 import { getPokemonData, getPokemons, searchPokemon } from './api';
 import { FavoriteProvider } from './context/favoriteContext';
 import Footer from './components/Footer';
+import {Link, Outlet} from 'react-router-dom';
 
 const localStorageKey = "favorite_pokemon"
 
@@ -83,11 +84,7 @@ function App() {
 
   return (
     <FavoriteProvider value={{favoritePokemons: favorites, updateFavoritePokemon: updateFavoritePokemon}}>
-      <h2 className="pokemon-card">
-      <Link to= "/matricula"> Matricula</Link>
-      
-      </h2>
-      <Outlet/>
+     
     <div>
       <Navbar />
       <div className="App">

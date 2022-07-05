@@ -1,7 +1,7 @@
 import React from 'react'
 import Pagination from './Pagination'
 import Pokemon from './Pokemon'
-
+import {Link, Outlet} from 'react-router-dom';
 
 const Pokedex = (props) => {
     const { pokemons, page, setPage, total, loading } = props
@@ -18,6 +18,11 @@ const Pokedex = (props) => {
 
     return (
         <div>
+             <h2 className="pokemon-card">
+      <Link to= "/matricula"> Matricula</Link>
+      
+      </h2>
+      <Outlet/>
             <div className="header-pagination">
                 <h1>Pokédex </h1>
                 <div className="pagination-container">
